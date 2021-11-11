@@ -102,5 +102,28 @@ namespace UserRegistrationException
                 return "invalid";
             }
         }
+
+        public string ValidPasword(string pass)
+        {
+            string password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,}$"; //Regular Expression shows that to pass all password rule
+            Regex regex = new Regex(password); //calling Regex function
+
+            try
+            {
+                if (regex.IsMatch(pass))
+                {
+                    return "Valid";
+                }
+                else
+                {
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "invalid";
+            }
+        }
     }
 }

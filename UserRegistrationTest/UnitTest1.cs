@@ -61,5 +61,20 @@ namespace UserRegistrationTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestMethod5()
+        {
+            //Arrange
+            string expected = "Valid";
+
+            //Act
+            UserRegistration test = new UserRegistration();
+            //string actual = test.ValidPasword("ADEdvfed47@af&");
+            string actual = test.ValidPasword("VIGmuthu05@mv");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
