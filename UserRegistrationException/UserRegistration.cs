@@ -79,5 +79,28 @@ namespace UserRegistrationException
                 return "invalid";
             }
         }
+
+        public string MobileNumber(string number)
+        {
+            string mobileNumber = "^[1-9]{2}[ ]{1}[0-9]{10}$"; //Regular Expression shows that number should contain country code followed by space and 10 digit number
+            Regex regex = new Regex(mobileNumber); //calling Regex function
+
+            try
+            {
+                if (regex.IsMatch(number))
+                {
+                    return "Valid";
+                }
+                else
+                {
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "invalid";
+            }
+        }
     }
 }

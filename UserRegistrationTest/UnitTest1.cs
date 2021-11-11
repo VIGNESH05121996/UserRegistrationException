@@ -47,5 +47,19 @@ namespace UserRegistrationTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            //Arrange
+            string expected = "Valid";
+
+            //Act
+            UserRegistration test = new UserRegistration();
+            string actual = test.MobileNumber("91 1234567890");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
