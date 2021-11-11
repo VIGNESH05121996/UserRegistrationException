@@ -19,5 +19,19 @@ namespace UserRegistrationTest
             //Assert
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            //Arrange
+            string expected = "Valid";
+
+            //Act
+            UserRegistration test = new UserRegistration();
+            string actual = test.LastName("Marimuthu");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
