@@ -57,5 +57,27 @@ namespace UserRegistrationException
             }
         }
 
+        public string ValidEmail(string mail)
+        {
+            string email = "^[a-z]{3}[.][a-z]*[@]{1}[bl]{2}[.]{1}[co]{2}[.]{1}[a-z]*$"; //Regular Expression shows Email should have 3 mandatory parts(abc,bl &co) and 2 optional(xyz & in) with precise @ and . position
+            Regex regex = new Regex(email); //calling Regex function
+
+            try
+            {
+                if (regex.IsMatch(mail))
+                {
+                    return "Valid";
+                }
+                else
+                {
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "invalid";
+            }
+        }
     }
 }

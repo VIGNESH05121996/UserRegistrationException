@@ -33,5 +33,19 @@ namespace UserRegistrationTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            //Arrange
+            string expected = "Valid";
+
+            //Act
+            UserRegistration test = new UserRegistration();
+            string actual = test.ValidEmail("abc.vicky@bl.co.in");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
