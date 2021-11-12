@@ -122,6 +122,29 @@ namespace UserRegistrationException
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return "Invalid";
+            }
+        }
+
+        public string AllValidEmail(string mail)
+        {
+            string email = @"^[a-zA-Z0-9]+[+-._]?[a-zA-Z0-9]*[+-._]?[a-zA-Z0-9]+@[a-zA-Z0-9]+[.]{1}[a-zA-Z]{2,3}[.]?[a-zA-Z]{0,3}$"; //Regular Expression shows to test all valid email
+            Regex regex = new Regex(email); //calling Regex function
+
+            try
+            {
+                if (regex.IsMatch(mail))
+                {
+                    return "Valid";
+                }
+                else
+                {
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
                 return "invalid";
             }
         }
